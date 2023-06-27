@@ -23,11 +23,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * This class uses locally installed MySQL to run the tests.
+ * This class uses test containers to run the tests.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class EmployeeControllerITests {
+public class EmployeeControllerIT extends AbstractContainerBaseTests {
 
     @Autowired
     private MockMvc mockMvc;
