@@ -16,7 +16,6 @@ import org.springframework.test.web.servlet.ResultActions;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -160,7 +159,7 @@ public class EmployeeControllerITests {
                 .build();
 
         // when - action or the behaviour that we are going to test
-        ResultActions response = mockMvc.perform(put("/api/employees/{id}", anyLong())
+        ResultActions response = mockMvc.perform(put("/api/employees/{id}", 0L)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(updatedEmployee)));
 
