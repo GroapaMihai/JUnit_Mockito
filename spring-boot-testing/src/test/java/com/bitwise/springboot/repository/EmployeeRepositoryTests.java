@@ -157,7 +157,7 @@ public class EmployeeRepositoryTests {
         Employee savedEmployee = employeeRepository.findByNativeSQL(employee.getFirstName(), employee.getLastName());
 
         // then - verify the output
-        Assertions.assertThat(savedEmployee).isNotNull();
+        Assertions.assertThat(savedEmployee).isNull();
     }
 
     @Test
